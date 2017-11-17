@@ -1,0 +1,27 @@
+"npc_dota_hero_antimage"
+{
+    "ArmorPhysical"		            "-2.5" // -1
+
+    "AttributeBaseStrength"		    "23" // 22
+    "AttributeBaseIntelligence"     "11" // 12
+    "AttributeAgilityGain"          "2.3" // 2.8
+    "AttributeBaseAgility"		    "23" // 22
+
+    "MovementSpeed"                 "290" // 310
+    "MovementTurnRate"              "0.8" // 0.5
+
+    "Ability1"		"antimage_mana_break"
+    "Ability2"		"antimage_blink"
+    "Ability3"		"antimage_spell_shield"
+    "Ability4"		"generic_hidden"
+    "Ability5"		"generic_hidden"
+    "Ability6"		"antimage_mana_void"
+    "Ability10"		"special_bonus_hp_175"
+    "Ability11"		"special_bonus_attack_speed_20"
+    "Ability12"		"special_bonus_hp_regen_6"
+    "Ability13"		"special_bonus_agility_15"
+    "Ability14"		"antimage_bonus_no_blink_manacost"
+    "Ability15"		"antimage_bonus_antimagic_aura"
+    "Ability16"		"special_bonus_unique_antimage_4"
+    "Ability17"		"special_bonus_unique_antimage_2"
+}

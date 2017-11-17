@@ -1,0 +1,222 @@
+"DOTAAbilities"
+{
+	"antimage_blink"
+	{
+	    "AbilityManaCost"				"60 70 80 90" // 60
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "blink_range"			"925 1000 1075 1150"
+	            "LinkedSpecialBonus"	""
+	        }
+	    }
+	}
+	"antimage_mana_void"
+	{
+	    //"HasScepterUpgrade"			"1"
+	}
+	"antimage_spell_shield"
+	{
+	    // For now... sigh
+	    "AbilitySpecial"
+	    {
+	        "02"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "scepter_cooldown"		"14" // 12
+	        }
+	    }
+	
+	    //"HasScepterUpgrade"			"0"
+	}
+	"bristleback_bristleback"
+	{
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"						"FIELD_INTEGER"
+	            "side_damage_reduction"			"8 12 16 20"
+	        }
+	        "02"
+	        {
+	            "var_type"						"FIELD_INTEGER"
+	            "back_damage_reduction"			"13 19 26 32" // 16 24 32 40
+	        }
+	        "05"
+	        {
+	            "var_type"						"FIELD_INTEGER"
+	            "quill_release_threshold"		"260" // 210
+	        }
+	    }
+	}
+	"bristleback_quill_spray"
+	{
+	    "AbilityCastRange"              "600" // 650
+	    "AbilityCooldown"				"4.0 4.0 3.5 3.0" // 3.0 3.0 3.0 3.0
+	    "AbilityManaCost"				"30 30 30 30" // 35 35 35 35
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "radius"				"600" // 700
+	        }
+	        "03"
+	        {
+	            "var_type"				"FIELD_FLOAT"
+	            "quill_stack_damage"	"22.0 24.0 26.0 28.0" // 30.0 32.0 34.0 36.0
+	            "LinkedSpecialBonus"	"special_bonus_unique_bristleback_2"
+	        }
+	        "04"
+	        {
+	            "var_type"				"FIELD_FLOAT"
+	            "quill_stack_duration"	"12.0" // 14
+	        }
+	        "05"
+	        {
+	            "var_type"				"FIELD_FLOAT"
+	            "max_damage"			"510.0" // 550
+	        }
+	    }
+	}
+	
+	"special_bonus_unique_bristleback_2"
+	{
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"			"FIELD_INTEGER"
+	            "value"				"8" // 25
+	        }
+	    }
+	}
+	"centaur_double_edge"
+	{
+	    "AbilityCastRange"				"210"
+	
+	    "AbilitySpecial"
+	    {
+	        
+	        "01"
+	        {
+	            "var_type"						"FIELD_INTEGER"
+	            "edge_damage"					"175 225 275 325" // 175 250 325 400
+	            "LinkedSpecialBonus"			"special_bonus_unique_centaur_4"
+	        }
+	        "02"
+	        {
+	            "var_type"						"FIELD_INTEGER"
+	            "radius"						"210" // 190
+	        }
+	    }
+	}
+	"centaur_hoof_stomp"
+	{
+	    "AbilitySpecial"
+	    {
+	        "02"
+	        {
+	            "var_type"						"FIELD_FLOAT"
+	            "stun_duration"					"1.5 1.75 2.0 2.25" // 2.0 2.25 2.5 2.75
+	            "LinkedSpecialBonus"			"special_bonus_unique_centaur_2"
+	        }
+	    }
+	}
+	"shredder_reactive_armor"
+	{
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"							"FIELD_FLOAT"
+	            "bonus_armor"						"1.4 1.6 1.8 2.0" // 1 1.2 1.4 1.6
+	        }
+	        "02"
+	        {
+	            "var_type"							"FIELD_FLOAT"
+	            "bonus_hp_regen"					"0.4 0.5 0.6 0.7" // 1 1.15 1.3 1.45
+	        }
+	        "03"
+	        {
+	            "var_type"							"FIELD_INTEGER"
+	            "stack_limit"						"5 10 15 15" // 5 10 15 20
+	            "LinkedSpecialBonus"				"special_bonus_unique_timbersaw_2"
+	        }
+	        "04"
+	        {
+	            "var_type"							"FIELD_FLOAT"
+	            "stack_duration"					"6 9 12 15" // 10 13 16 19
+	        }
+	    }
+	}
+	//========================================================
+	// Mana Void Cooldown
+	//========================================================
+	"special_bonus_unique_antimage_2"
+	{
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"			"FIELD_INTEGER"
+	            "value"				"40" // 50
+	        }
+	    }
+	}
+	
+	//========================================================
+	// Old: -1s Blink Cooldown
+	//========================================================
+	"special_bonus_unique_antimage_balanced"
+	{
+	
+	}
+	
+	//========================================================
+	// Old: Blink Uncontrollable Illusion
+	// New: No Blink Manacost
+	//========================================================
+	"antimage_bonus_no_blink_manacost"
+	{
+	    "BaseClass"         "special_bonus_undefined"
+	
+	    "AbilityType"       "DOTA_ABILITY_TYPE_ATTRIBUTES"
+	    "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "MaxLevel" 			"1"
+	}
+	
+	//========================================================
+	// Old: 300 Blink Cast Range
+	// New: Antimagic Aura
+	//========================================================
+	"antimage_bonus_antimagic_aura"
+	{
+	    "BaseClass"         "special_bonus_undefined"
+	
+	    "AbilityType"       "DOTA_ABILITY_TYPE_ATTRIBUTES"
+	    "AbilityBehavior"   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityCastRange"  "900"
+	    "MaxLevel" 			"1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"                  "FIELD_FLOAT"
+	            "mana_regen_allies"         "0.5"
+	        }
+	
+	        "02"
+	        {
+	            "var_type"                  "FIELD_FLOAT"
+	            "mana_regen_enemies"        "-1.5"
+	        }
+	    }
+	}
+}

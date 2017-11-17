@@ -1,0 +1,14 @@
+"antimage_spell_shield"
+{
+    // For now... sigh
+    "AbilitySpecial"
+    {
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "scepter_cooldown"		"14" // 12
+        }
+    }
+
+    //"HasScepterUpgrade"			"0"
+}

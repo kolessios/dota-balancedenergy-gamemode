@@ -1,0 +1,20 @@
+"centaur_double_edge"
+{
+    "AbilityCastRange"				"210"
+
+    "AbilitySpecial"
+    {
+        
+        "01"
+        {
+            "var_type"						"FIELD_INTEGER"
+            "edge_damage"					"175 225 275 325" // 175 250 325 400
+            "LinkedSpecialBonus"			"special_bonus_unique_centaur_4"
+        }
+        "02"
+        {
+            "var_type"						"FIELD_INTEGER"
+            "radius"						"210" // 190
+        }
+    }
+}

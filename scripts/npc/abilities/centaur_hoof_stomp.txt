@@ -1,0 +1,12 @@
+"centaur_hoof_stomp"
+{
+    "AbilitySpecial"
+    {
+        "02"
+        {
+            "var_type"						"FIELD_FLOAT"
+            "stun_duration"					"1.5 1.75 2.0 2.25" // 2.0 2.25 2.5 2.75
+            "LinkedSpecialBonus"			"special_bonus_unique_centaur_2"
+        }
+    }
+}

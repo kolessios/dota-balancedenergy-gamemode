@@ -1,0 +1,181 @@
+"DOTAUnits"
+{
+	"dota_fountain"
+	{
+	    "AttackDamageMin"			"920" // 220
+	    "AttackDamageMax"           "1120" // 240
+	    "AttackDamageType"          "DAMAGE_TYPE_PURE" // DAMAGE_TYPE_ArmorPhysical
+	    "AttackRate"				"0.15" // 0.15
+	    "ProjectileSpeed"			"1600" // 1400
+	}
+	"npc_dota_courier"
+	{
+	    "MovementSpeed"         "430" // 380
+	    "MovementTurnRate"      "0.6" // 0.5
+	
+	    "StatusHealthRegen"     "0.0" // 0.5
+	
+	    "VisionDaytimeRange"		"400" // 350
+		"VisionNighttimeRange"		"400" // 350
+	}
+	"npc_dota_observer_wards"
+	{
+	    "BountyXP"					"50"		// Experience earn.
+	    "BountyGoldMin"				"50"		// Gold earned min.
+	    "BountyGoldMax"				"50"		// Gold earned max.
+	
+	    "VisionDaytimeRange"		"1100"		// Range of vision during day light.
+	    "VisionNighttimeRange"		"1250"		// Range of vision at night time.
+	}
+	//=========================================================
+	// TIER 1
+	//=========================================================
+	
+	"npc_dota_goodguys_tower1_top"
+	{
+	    "AttackDamageMin"			"110" // 100
+	    "AttackDamageMax"			"130" // 120
+	    "AttackRate"				"0.95" // 1
+	    "ArmorPhysical"				"13" // 17
+	}
+	"npc_dota_badguys_tower1_top"
+	{
+	    "AttackDamageMin"			"110" // 100
+	    "AttackDamageMax"			"130" // 120
+	    "AttackRate"				"0.95" // 1
+	    "ArmorPhysical"				"13" // 17
+	}
+	
+	"npc_dota_goodguys_tower1_bot"
+	{
+	    "AttackDamageMin"			"110" // 100
+	    "AttackDamageMax"			"130" // 120
+	    "AttackRate"				"0.95" // 1
+	    "ArmorPhysical"				"13" // 17
+	}
+	"npc_dota_badguys_tower1_bot"
+	{
+	    "AttackDamageMin"			"110" // 100
+	    "AttackDamageMax"			"130" // 120
+	    "AttackRate"				"0.95" // 1
+	    "ArmorPhysical"				"13" // 17
+	}
+	
+	"npc_dota_goodguys_tower1_mid"
+	{
+	    "AttackDamageMin"			"120" // 100
+	    "AttackDamageMax"			"130" // 120
+	    "AttackRate"				"0.95" // 1
+	    "ArmorPhysical"				"14" // 17
+	}
+	"npc_dota_badguys_tower1_mid"
+	{
+	    "AttackDamageMin"			"120" // 100
+	    "AttackDamageMax"			"130" // 120
+	    "AttackRate"				"0.95" // 1
+	    "ArmorPhysical"				"14" // 17
+	}
+	
+	//=========================================================
+	// TIER 2
+	//=========================================================
+	
+	"npc_dota_goodguys_tower2_top"
+	{
+	    "AttackDamageMin"			"152" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.9" // 0.95
+	}
+	"npc_dota_badguys_tower2_top"
+	{
+	    "AttackDamageMin"			"152" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.9" // 0.95
+	}
+	
+	"npc_dota_goodguys_tower2_bot"
+	{
+	    "AttackDamageMin"			"152" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.9" // 0.95
+	}
+	"npc_dota_badguys_tower2_bot"
+	{
+	    "AttackDamageMin"			"152" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.9" // 0.95
+	}
+	
+	"npc_dota_goodguys_tower2_mid"
+	{
+	    "AttackDamageMin"			"162" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.85" // 0.95
+	}
+	"npc_dota_badguys_tower2_mid"
+	{
+	    "AttackDamageMin"			"162" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.85" // 0.95
+	}
+	
+	//=========================================================
+	// TIER 3
+	//=========================================================
+	
+	"npc_dota_goodguys_tower3_top"
+	{
+	    "AttackDamageMin"			"152" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.9" // 0.95
+	}
+	"npc_dota_badguys_tower3_top"
+	{
+	    "AttackDamageMin"			"152" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.9" // 0.95
+	}
+	
+	"npc_dota_goodguys_tower3_bot"
+	{
+	    "AttackDamageMin"			"152" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.9" // 0.95
+	}
+	"npc_dota_badguys_tower3_bot"
+	{
+	    "AttackDamageMin"			"152" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.9" // 0.95
+	}
+	
+	"npc_dota_goodguys_tower3_mid"
+	{
+	    "AttackDamageMin"			"162" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.85" // 0.95
+	}
+	"npc_dota_badguys_tower3_mid"
+	{
+	    "AttackDamageMin"			"162" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.85" // 0.95
+	}
+	
+	//=========================================================
+	// TIER 4
+	//=========================================================
+	
+	"npc_dota_goodguys_tower4"
+	{
+	    "AttackDamageMin"			"162" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.8" // 0.95
+	}
+	"npc_dota_badguys_tower4"
+	{
+	    "AttackDamageMin"			"162" // 142
+	    "AttackDamageMax"			"172" // 162
+	    "AttackRate"				"0.8" // 0.95
+	}
+}

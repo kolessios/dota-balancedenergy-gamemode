@@ -1,0 +1,32 @@
+//=================================================================================================================
+// Sentry Ward
+//=================================================================================================================
+"item_ward_sentry"
+{
+    "AbilityCooldown"	"0.0"
+
+    "ItemCost"              "30" // 100
+    "ItemStockMax"          "12"
+    "ItemStockInitial"	    "3"
+    "ItemStockTime"			"30.0"
+    "ItemInitialStockTime"	"120.0"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "lifetime"				"30" // 240
+        }
+        "05"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "duration_minutes_tooltip"				"0.5" // 4
+        }
+        "07"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "duration_seconds_tooltip"				"30"
+        }
+    }
+}

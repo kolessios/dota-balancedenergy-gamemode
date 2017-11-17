@@ -1,0 +1,9 @@
+"npc_dota_observer_wards"
+{
+    "BountyXP"					"50"		// Experience earn.
+    "BountyGoldMin"				"50"		// Gold earned min.
+    "BountyGoldMax"				"50"		// Gold earned max.
+
+    "VisionDaytimeRange"		"1100"		// Range of vision during day light.
+    "VisionNighttimeRange"		"1250"		// Range of vision at night time.
+}

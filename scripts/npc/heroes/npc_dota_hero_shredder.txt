@@ -1,0 +1,9 @@
+"npc_dota_hero_shredder"
+{
+    "ArmorPhysical"		        "-0.5" // -2
+    "MagicalResistance"         "27" // 25
+
+    "AttributeBaseStrength"     "24" // 21
+    "MovementSpeed"		        "280" // 290
+    "MovementTurnRate"		    "0.5" // 0.6
+}

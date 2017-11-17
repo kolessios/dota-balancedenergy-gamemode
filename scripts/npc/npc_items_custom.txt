@@ -1,0 +1,306 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Courier
+	//=================================================================================================================
+	"item_courier"
+	{
+	    "ItemCost"  "0"
+	}
+	//=================================================================================================================
+	// Dust
+	//=================================================================================================================
+	"item_dust"
+	{
+	    "AbilityCooldown"	"20.0" // 30
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "duration"				"15" // 12
+	        }
+	    }
+	}
+	//=================================================================================================================
+	// Hand of Midas
+	//=================================================================================================================
+	"item_hand_of_midas"
+	{
+	    "AbilityCastRange"  "500"
+	    "ItemCost"			"2200"
+	
+	    "AbilitySpecial"
+	    {
+	        "02"
+	        {
+	            "var_type"				"FIELD_FLOAT"
+	            "xp_multiplier"			"2.0"
+	        }
+	        "03"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "bonus_gold"			"160"
+	        }
+	        "04"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "transmute_cast_range_tooltip"			"500"
+	        }
+	    }
+	}
+	
+	//=================================================================================================================
+	// Recipe: Hand of Midas
+	//=================================================================================================================
+	"item_recipe_hand_of_midas"
+	{
+	    "ItemCost"  "1700"
+	}
+	//=================================================================================================================
+	// Lucky Coin
+	//=================================================================================================================
+	"item_lucky_coin"
+	{
+	    "ID"            "4000"
+	    "BaseClass"     "item_lua"
+	    "ScriptFile"    "items/item_lucky_coin"
+	
+	    "AbilityTextureName"    "Siltbreaker_Stonework_Pendant"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+	
+	    "AbilityChannelTime"    "6.0"
+	    "AbilityCooldown"       "3.0"
+	    "AbilityManaCost"       "0"
+	    "AbilityCastRange"      "600.0"
+	    "AbilityCastPoint"      "0.0"
+	
+	    "ItemCost"                  "140"
+	    "ItemShopTags"              ""
+	    "ItemQuality"               "rare"
+	    "ItemAliases"               "lucky coin;coin"
+	    "ItemShareability"          "ITEM_NOT_SHAREABLE"
+	    "ItemDroppable"             "0"
+	    "ItemStackable"             "0"
+	    "ItemPermanent"             "0"
+	    "ItemRequiresCharges"       "0"
+	    "ItemInitialCharges"        "0"
+	    "ItemDisplayCharges"        "1"
+	    "ItemStockMax"              "2"
+	    "ItemStockTime"			    "36000.0"
+	    "ItemDeclarations"          "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	    "ItemSupport"               "1"
+	    "IsTempestDoubleClonable"   "1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"      "FIELD_INTEGER"
+	            "bonus_gold"    "20"
+	        }
+	
+	        "02"
+	        {
+	            "var_type"    "FIELD_FLOAT"
+	            "hp_regen"    "1.0"
+	        }
+	
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "chance_hero_support"   "28"
+	        }
+	
+	        "04"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "chance_hero_common"    "12"
+	        }
+	
+	        "05"
+	        {
+	            "var_type"          "FIELD_FLOAT"
+	            "cooldown_gold"     "6.0"
+	        }
+	
+	        "06"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "tooltip_channeling"    "6.0"
+	        }
+	
+	        "07"
+	        {
+	            "var_type"      "FIELD_FLOAT"
+	            "tooltip_range"    "600.0"
+	        }
+	    }
+	
+	    "precache"
+	    {
+	        "particle"  "particles/items2_fx/teleport_start.vpcf"
+	        "particle"  "particles/units/heroes/hero_furion/furion_tnt_rain_coins.vpcf"
+	    }
+	}
+	//=================================================================================================================
+	// Mekansm
+	//=================================================================================================================
+	"item_mekansm"
+	{
+	    "AbilityCooldown"		"70.0"
+	
+	    "AbilitySpecial"
+	    {
+	        "04"
+	        {
+	            "var_type"				"FIELD_FLOAT"
+	            "aura_health_regen"		"4" // 3.5
+	        }
+	        "05"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "heal_amount"			"330" // 250
+	        }
+	        "06"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "heal_bonus_armor"		"3" // 2
+	        }
+	    }
+	}
+	
+	//=================================================================================================================
+	// Guardian Greaves
+	//=================================================================================================================
+	"item_guardian_greaves"
+	{
+	    "AbilityCooldown"		"45.0"
+	
+	    "AbilitySpecial"
+	    {
+	        "05"
+	        {
+	            "var_type"				"FIELD_FLOAT"
+	            "aura_health_regen"		"4" // 3.5
+	        }
+	        "06"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "aura_armor"			"3" // 2
+	        }
+	        "11"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "replenish_health"		"330" // 250
+	        }
+	    }
+	}
+	//=================================================================================================================
+	// Recipe: Ward Dispenser
+	//=================================================================================================================
+	"item_recipe_ward_dispenser"
+	{
+	    "ItemPurchasable" "0"
+	    "IsObsolete" "1"
+	    "ItemResult" ""
+	    "ItemRequirements"
+	    {
+	        
+	    }
+	}
+	//=================================================================================================================
+	// Tome of Knowledge
+	//=================================================================================================================
+	"item_tome_of_knowledge"
+	{
+	    "ItemCost"						"180"
+	}
+	//=================================================================================================================
+	// Ward Dispenser
+	//=================================================================================================================
+	"item_ward_dispenser"
+	{
+	    "ItemPurchasable" "0"
+	    "IsObsolete" "1"
+	}
+	//=================================================================================================================
+	// Observer Wards
+	//=================================================================================================================
+	"item_ward_observer"
+	{
+	    "AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	    "AbilityCooldown"	    "0.0"
+	
+	    "ItemCost"              "210" // 80
+	    "ItemQuality"		    "common" // consumable
+	    "ItemStackable"		    "0" // 1
+	    "ItemShareability"		"ITEM_NOT_SHAREABLE" // ITEM_FULLY_SHAREABLE_STACKING
+	    "ItemSellable"          "0" // 1
+	    "ItemPermanent"		    "1" // 0
+	    "ItemRequiresCharges"   "1" // 0
+	    "ItemInitialCharges"	"3"
+	    "ItemDisplayCharges"	"1"
+	    "ItemStockMax"          "2"
+	    "ItemStockInitial"		"1"
+	    "ItemStockTime"			"36000.0"
+	    "ItemInitialStockTime"	"690.0"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "lifetime"				"180" // 360
+	        }
+	        "02"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "vision_range"			"1100" // 1600
+	        }
+	        "04"
+	        {
+	            "var_type"				    "FIELD_FLOAT"
+	            "duration_minutes_tooltip"	"3" // 6
+	        }
+	        "06"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "vision_range_night"    "1300" // 1600
+	        }
+	    }
+	}
+	//=================================================================================================================
+	// Sentry Ward
+	//=================================================================================================================
+	"item_ward_sentry"
+	{
+	    "AbilityCooldown"	"0.0"
+	
+	    "ItemCost"              "30" // 100
+	    "ItemStockMax"          "12"
+	    "ItemStockInitial"	    "3"
+	    "ItemStockTime"			"30.0"
+	    "ItemInitialStockTime"	"120.0"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "lifetime"				"30" // 240
+	        }
+	        "05"
+	        {
+	            "var_type"				"FIELD_FLOAT"
+	            "duration_minutes_tooltip"				"0.5" // 4
+	        }
+	        "07"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "duration_seconds_tooltip"				"30"
+	        }
+	    }
+	}
+}

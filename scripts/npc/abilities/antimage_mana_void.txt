@@ -1,0 +1,4 @@
+"antimage_mana_void"
+{
+    //"HasScepterUpgrade"			"1"
+}

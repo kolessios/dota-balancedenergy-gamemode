@@ -1,0 +1,86 @@
+//=================================================================================================================
+// Lucky Coin
+//=================================================================================================================
+"item_lucky_coin"
+{
+    "ID"            "4000"
+    "BaseClass"     "item_lua"
+    "ScriptFile"    "items/item_lucky_coin"
+
+    "AbilityTextureName"    "Siltbreaker_Stonework_Pendant"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+
+    "AbilityChannelTime"    "6.0"
+    "AbilityCooldown"       "3.0"
+    "AbilityManaCost"       "0"
+    "AbilityCastRange"      "600.0"
+    "AbilityCastPoint"      "0.0"
+
+    "ItemCost"                  "140"
+    "ItemShopTags"              ""
+    "ItemQuality"               "rare"
+    "ItemAliases"               "lucky coin;coin"
+    "ItemShareability"          "ITEM_NOT_SHAREABLE"
+    "ItemDroppable"             "0"
+    "ItemStackable"             "0"
+    "ItemPermanent"             "0"
+    "ItemRequiresCharges"       "0"
+    "ItemInitialCharges"        "0"
+    "ItemDisplayCharges"        "1"
+    "ItemStockMax"              "2"
+    "ItemStockTime"			    "36000.0"
+    "ItemDeclarations"          "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "ItemSupport"               "1"
+    "IsTempestDoubleClonable"   "1"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"      "FIELD_INTEGER"
+            "bonus_gold"    "20"
+        }
+
+        "02"
+        {
+            "var_type"    "FIELD_FLOAT"
+            "hp_regen"    "1.0"
+        }
+
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "chance_hero_support"   "28"
+        }
+
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "chance_hero_common"    "12"
+        }
+
+        "05"
+        {
+            "var_type"          "FIELD_FLOAT"
+            "cooldown_gold"     "6.0"
+        }
+
+        "06"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "tooltip_channeling"    "6.0"
+        }
+
+        "07"
+        {
+            "var_type"      "FIELD_FLOAT"
+            "tooltip_range"    "600.0"
+        }
+    }
+
+    "precache"
+    {
+        "particle"  "particles/items2_fx/teleport_start.vpcf"
+        "particle"  "particles/units/heroes/hero_furion/furion_tnt_rain_coins.vpcf"
+    }
+}

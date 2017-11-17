@@ -40,7 +40,7 @@ end
 
 -- Returns the amount of exp boost that will be provided
 function modifier_global_boost:GetModifierPercentageExpRateBoost()
-    return 8
+    return 10
 end
 
 --

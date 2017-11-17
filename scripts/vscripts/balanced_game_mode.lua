@@ -24,6 +24,7 @@ function CBalancedGameMode:InitGameMode()
 	
 	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen(25.0)
 	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen(25.0)
+	GameRules:GetGameModeEntity():SetBotThinkingEnabled(true)
     
 	-- Events
 	ListenToGameEvent("game_rules_state_change", Dynamic_Wrap( CBalancedGameMode, "OnGameRulesStateChange" ), self)
@@ -41,6 +42,7 @@ function CBalancedGameMode:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
 
 	if nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		self:ApplyBotDifficulty()
 		self:ApplyBoost()
 	end
 end
@@ -79,6 +81,15 @@ function CBalancedGameMode:ApplyBoost()
 	for _,hHero in pairs(HeroList:GetAllHeroes()) do
 		if ( hHero:IsRealHero() ) then
 			hHero:AddNewModifier(hHero, nil, 'modifier_global_boost', nil)
+		end
+	end
+end
+
+-- Applies the Bot difficulty for all bots
+function CBalancedGameMode:ApplyBotDifficulty()
+	for _,hHero in pairs(HeroList:GetAllHeroes()) do
+		if ( hHero:IsRealHero() and PlayerResource:GetConnectionState(hHero:GetPlayerOwnerID()) == 1 ) then
+			hHero:SetBotDifficulty(3) -- Hard
 		end
 	end
 end

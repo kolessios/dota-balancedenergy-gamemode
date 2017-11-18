@@ -22,8 +22,8 @@ function CBalancedGameMode:InitGameMode()
 	GameRules:SetStrategyTime(15)
 	GameRules:SetPreGameTime(40)
 	
-	--GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen(25.0)
-	--GameRules:GetGameModeEntity():SetFountainPercentageManaRegen(25.0)
+	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen(8.0)
+	--GameRules:GetGameModeEntity():SetFountainPercentageManaRegen(6.0)
 	GameRules:GetGameModeEntity():SetBotThinkingEnabled(true)
     
 	-- Events

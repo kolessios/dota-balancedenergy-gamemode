@@ -4,6 +4,6 @@
     "BountyGoldMin"				"50"		// Gold earned min.
     "BountyGoldMax"				"50"		// Gold earned max.
 
-    "VisionDaytimeRange"		"1100"		// Range of vision during day light.
-    "VisionNighttimeRange"		"1250"		// Range of vision at night time.
+    "VisionDaytimeRange"		"1200"		// Range of vision during day light.
+    "VisionNighttimeRange"		"1300"		// Range of vision at night time.
 }

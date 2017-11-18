@@ -1,26 +1,27 @@
 "bristleback_quill_spray"
 {
-    "AbilityCastRange"              "700" // 650
-    "AbilityCooldown"				"4.0 4.0 3.0 3.0" // 3.0 3.0 3.0 3.0
-    "AbilityManaCost"				"30 30 30 30" // 35 35 35 35
+    "AbilityCastRange"              "600" // 650
+    "AbilityCooldown"				"3.0 3.0 4.0 4.0" // 3.0 3.0 3.0 3.0
+    "AbilityManaCost"				"35 35 40 40" // 35 35 35 35
+    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO" // SPELL_IMMUNITY_ENEMIES_YES
 
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "radius"				"700" // 700
+            "radius"				"600" // 700
         }
         "03"
         {
             "var_type"				"FIELD_FLOAT"
-            "quill_stack_damage"	"23.0 25.0 27.0 29.0" // 30.0 32.0 34.0 36.0
+            "quill_stack_damage"	"14.0 17.0 20.0 23.0" // 30.0 32.0 34.0 36.0
             "LinkedSpecialBonus"	"special_bonus_unique_bristleback_2"
         }
         "05"
         {
             "var_type"				"FIELD_FLOAT"
-            "max_damage"			"510.0" // 550
+            "max_damage"			"550.0" // 550
         }
     }
 }

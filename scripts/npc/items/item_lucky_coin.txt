@@ -21,7 +21,7 @@
     "ItemQuality"               "rare"
     "ItemAliases"               "lucky coin;coin"
     "ItemShareability"          "ITEM_NOT_SHAREABLE"
-    "ItemDroppable"             "0"
+    "ItemDroppable"             "1"
     "ItemStackable"             "0"
     "ItemPermanent"             "0"
     "ItemRequiresCharges"       "0"
@@ -38,7 +38,7 @@
         "01"
         {
             "var_type"      "FIELD_INTEGER"
-            "bonus_gold"    "20"
+            "bonus_gold"    "22"
         }
 
         "02"
@@ -50,7 +50,7 @@
         "03"
         {
             "var_type"              "FIELD_INTEGER"
-            "chance_hero_support"   "28"
+            "chance_hero_support"   "32"
         }
 
         "04"

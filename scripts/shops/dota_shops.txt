@@ -3,7 +3,7 @@
 	"consumables"
 	{
 		"item" 		"item_courier"
-		"item"		"item_ward_sentry"
+		"item"		"item_ward_observer"
 		"item"		"item_tpscroll"
 		"item"		"item_clarity"	
 		"item"		"item_faerie_fire"				
@@ -44,10 +44,11 @@
 
 	"weapons_armor"
 	{
+		"item"		"item_lucky_coin"
 		"item"		"item_ring_of_protection"
 		"item"		"item_stout_shield"
 		"item"		"item_quelling_blade"
-		"item"		"item_infused_raindrop"	
+		"iktem"		"item_infused_raindrop"	
 		"item"		"item_orb_of_venom"
 		"item"		"item_blight_stone"
 		"item"		"item_blades_of_attack"
@@ -62,9 +63,7 @@
 			
 	"misc"
 	{
-		"item"		"item_lucky_coin"
 		"item"		"item_magic_stick"
-		"item"		"item_ward_observer"
 		"item"		"item_wind_lace"
 		"item"		"item_ring_of_regen"
 		"item"		"item_sobi_mask"
@@ -74,6 +73,7 @@
 		"item"		"item_ring_of_health"
 		"item"		"item_void_stone"			
 		"item"		"item_gem"
+		"item"		"item_linkens_orb"
 		"item"		"item_lifesteal"
 		"item"		"item_shadow_amulet"	
 		"item"		"item_ghost"

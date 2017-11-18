@@ -15,7 +15,7 @@
         "05"
         {
             "var_type"						"FIELD_INTEGER"
-            "quill_release_threshold"		"240" // 210
+            "quill_release_threshold"		"280" // 210
         }
     }
 }

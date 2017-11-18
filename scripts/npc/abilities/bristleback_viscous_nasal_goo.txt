@@ -1,0 +1,13 @@
+"bristleback_viscous_nasal_goo"
+{
+    "AbilityManaCost"			"30"
+
+    "AbilitySpecial"
+    {
+        "04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "base_move_slow"		"10" // 20
+        }
+    }
+}

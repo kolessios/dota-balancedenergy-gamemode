@@ -8,6 +8,7 @@ end
 
 -- Modifiers
 LinkLuaModifier('modifier_global_boost', 'modifiers/modifier_global_boost', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_courier_speed', 'modifiers/modifier_courier_speed', LUA_MODIFIER_MOTION_NONE)
 
 -- Initialize the Game Mode
 function CBalancedGameMode:InitGameMode()
@@ -16,11 +17,11 @@ function CBalancedGameMode:InitGameMode()
 	AntimageSystem = CAntimageSystem()
 	
 	-- Game Rules
-	GameRules:SetGoldTickTime(0.6)
+	GameRules:SetGoldTickTime(0.3)
 	GameRules:SetCustomGameSetupAutoLaunchDelay(20)
-	GameRules:SetHeroSelectionTime(31)
+	GameRules:SetHeroSelectionTime(30)
 	GameRules:SetStrategyTime(15)
-	GameRules:SetPreGameTime(40)
+	GameRules:SetPreGameTime(50)
 	
 	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen(8.0)
 	--GameRules:GetGameModeEntity():SetFountainPercentageManaRegen(6.0)
@@ -34,12 +35,14 @@ function CBalancedGameMode:InitGameMode()
 	ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap( CAntimageSystem, 'OnPlayerLearnedAbility' ), AntimageSystem)
 
 	-- Global Think
-	GameRules:GetGameModeEntity():SetThink( 'OnThink', self, 'GlobalThink', 1.0 )
+	GameRules:GetGameModeEntity():SetThink( 'OnThink', self, 'GlobalThink', 0.5 )
 end
 
 -- 
 function CBalancedGameMode:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
+
+	print(nNewState)
 
 	if nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		self:ApplyBotDifficulty()
@@ -61,6 +64,8 @@ end
 -- 
 function CBalancedGameMode:OnThinkGameProgress()
 	self:CheckHeroes()
+	self:ApplyCourierBoost()
+	self:ApplyTrueSight()
 	return 1
 end
 
@@ -76,7 +81,7 @@ function CBalancedGameMode:CheckHeroes()
 	end
 end
 
--- Applies a modifier offering advantages
+-- Applies a modifier to the heroes to offer base benefits
 function CBalancedGameMode:ApplyBoost()
 	for _,hHero in pairs(HeroList:GetAllHeroes()) do
 		if ( hHero:IsRealHero() ) then
@@ -91,5 +96,33 @@ function CBalancedGameMode:ApplyBotDifficulty()
 		if ( hHero:IsRealHero() and PlayerResource:GetConnectionState(hHero:GetPlayerOwnerID()) == 1 ) then
 			hHero:SetBotDifficulty(3) -- Hard
 		end
+	end
+end
+
+-- Applies a modifier to the couriers to increase their movement speed
+function CBalancedGameMode:ApplyCourierBoost()
+	local hCourier = Entities:FindByClassname(nil, 'npc_dota_courier')
+
+	while hCourier do
+		if ( not hCourier:HasModifier('modifier_courier_speed') ) then
+			print('modifier_courier_speed')
+			hCourier:AddNewModifier(hCourier, nil, 'modifier_courier_speed', nil)
+		end
+
+		hCourier = Entities:FindByClassname(hCourier, 'npc_dota_courier')
+	end
+end
+
+-- Provide observers with true sight
+function CBalancedGameMode:ApplyTrueSight()
+	local hWard = Entities:FindByClassname(nil, 'npc_dota_ward_base')
+	
+	while hWard do
+		if ( not hWard:HasModifier('modifier_truesight_aura') ) then		
+			hWard:AddNewModifier(hWard, nil, 'modifier_item_ward_true_sight', nil)
+			hWard:AddNewModifier(hWard, nil, 'modifier_truesight_aura', nil)
+		end
+
+		hWard = Entities:FindByClassname(hWard, 'npc_dota_ward_base')
 	end
 end

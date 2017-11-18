@@ -1,0 +1,48 @@
+//=================================================================================================================
+// Linkens Orb
+//=================================================================================================================
+"item_linkens_orb"
+{
+    "ID"            "4001"
+    "BaseClass"     "item_lua"
+    "ScriptFile"    "items/item_linkens_orb"
+
+    "AbilityTextureName"    "Siltbreaker_Orb_of_Passage_icon"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "FightRecapLevel"		"1"
+
+    "AbilityCooldown"       "18.0"
+    "AbilityManaCost"       "0.0"
+    "AbilityCastPoint"      "0.0"
+
+    "ItemCost"                  "1000"
+    "ItemShopTags"              "regen_mana;int;hard_to_tag"
+    "ItemQuality"               "epic"
+    "ItemAliases"               "lo;linken's orb"
+    "ItemShareability"          "ITEM_NOT_SHAREABLE"
+    "ItemDroppable"             "1"
+    "ItemStackable"             "0"
+    "ItemPermanent"             "0"
+    "ItemRequiresCharges"       "0"
+    "ItemDeclarations"          "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"        "FIELD_FLOAT"
+            "mana_regen"      "0.75"
+        }
+
+        "02"
+        {
+            "var_type"      "FIELD_FLOAT"
+            "duration"      "0.5"
+        }
+    }
+
+    "precache"
+    {
+        "particle"  "particles/items_fx/immunity_orb_buff.vpcf"
+    }
+}

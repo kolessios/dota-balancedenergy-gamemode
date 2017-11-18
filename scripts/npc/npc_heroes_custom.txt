@@ -2,8 +2,6 @@
 {
 	"npc_dota_hero_antimage"
 	{
-	    "ArmorPhysical"		            "-1.5" // -1
-	
 	    "AttributeBaseStrength"		    "23" // 22
 	    "AttributeAgilityGain"          "2.5" // 2.8
 	    "AttributeBaseAgility"		    "23" // 22
@@ -21,16 +19,16 @@
 	    "Ability11"		"special_bonus_attack_speed_20"
 	    "Ability12"		"special_bonus_hp_regen_6"
 	    "Ability13"		"special_bonus_agility_15"
-	    "Ability14"		"antimage_bonus_no_blink_manacost"
+	    "Ability14"		"special_bonus_unique_antimage"
 	    "Ability15"		"antimage_bonus_antimagic_aura"
 	    "Ability16"		"special_bonus_unique_antimage_4"
 	    "Ability17"		"special_bonus_unique_antimage_2"
 	}
 	"npc_dota_hero_bristleback"
 	{
-	    "AttributeBaseStrength"		"25" // 22
-	    "MovementTurnRate"		    "0.8" // 1.0
-	    "ArmorPhysical"             "3.5" // 1.0
+	    "AttributeBaseStrength"		"26" // 22
+	    "MovementTurnRate"		    "0.7" // 1.0
+	    "ArmorPhysical"             "2.0" // 1.0
 	
 	    "Ability14"		            "special_bonus_hp_regen_12"
 	}

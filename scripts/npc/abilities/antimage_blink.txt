@@ -1,14 +1,4 @@
 "antimage_blink"
 {
-    "AbilityManaCost"				"60 70 80 90" // 60
-
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "blink_range"			"925 1000 1075 1150"
-            "LinkedSpecialBonus"	""
-        }
-    }
+    "AbilityCooldown"				"14 11 9 7" // 15 12 9 6
 }

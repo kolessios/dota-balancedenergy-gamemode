@@ -10,13 +10,9 @@
 	}
 	"npc_dota_courier"
 	{
-	    "MovementSpeed"         "430" // 380
-	    "MovementTurnRate"      "0.6" // 0.5
-	
-	    "StatusHealthRegen"     "0.0" // 0.5
-	
-	    "VisionDaytimeRange"		"400" // 350
-		"VisionNighttimeRange"		"400" // 350
+	    "MovementTurnRate"          "2.0" // 0.5
+	    "VisionDaytimeRange"		"500" // 350
+		"VisionNighttimeRange"		"500" // 350
 	}
 	"npc_dota_observer_wards"
 	{

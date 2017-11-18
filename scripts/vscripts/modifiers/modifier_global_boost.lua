@@ -39,11 +39,12 @@ function modifier_global_boost:IsPurgable()
 end
 
 -- Returns the amount of exp boost that will be provided
+-- 100 = Normal XP
 function modifier_global_boost:GetModifierPercentageExpRateBoost()
-    return 10
+    return 105
 end
 
 --
 function modifier_global_boost:GetModifierPercentageRespawnTime()
-    return 0.4
+    return 0.2
 end

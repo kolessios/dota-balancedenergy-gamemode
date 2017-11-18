@@ -6,7 +6,7 @@
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "scepter_cooldown"		"14" // 12
+            "scepter_cooldown"		"17" // 12
         }
     }
 

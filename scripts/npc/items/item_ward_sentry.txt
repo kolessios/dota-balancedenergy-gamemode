@@ -5,6 +5,9 @@
 {
     "AbilityCooldown"	"0.0"
 
+    "ItemPurchasable"       "0"
+    "IsObsolete" "1"
+    
     "ItemCost"              "30" // 100
     "ItemStockMax"          "12"
     "ItemStockInitial"	    "3"

@@ -1,8 +1,8 @@
 "dota_fountain"
 {
-    "AttackDamageMin"			"920" // 220
-    "AttackDamageMax"           "1120" // 240
-    "AttackDamageType"          "DAMAGE_TYPE_PURE" // DAMAGE_TYPE_ArmorPhysical
+    "AttackDamageMin"			"420" // 220
+    "AttackDamageMax"           "460" // 240
+    //"AttackDamageType"          "DAMAGE_TYPE_PURE" // DAMAGE_TYPE_ArmorPhysical
     "AttackRate"				"0.15" // 0.15
-    "ProjectileSpeed"			"1600" // 1400
+    "ProjectileSpeed"			"1400" // 1400
 }

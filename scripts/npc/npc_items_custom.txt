@@ -12,8 +12,6 @@
 	//=================================================================================================================
 	"item_dust"
 	{
-	    "AbilityCooldown"	"20.0" // 30
-	
 	    "AbilitySpecial"
 	    {
 	        "01"
@@ -148,15 +146,10 @@
 	
 	    "AbilitySpecial"
 	    {
-	        "04"
-	        {
-	            "var_type"				"FIELD_FLOAT"
-	            "aura_health_regen"		"4" // 3.5
-	        }
 	        "05"
 	        {
 	            "var_type"				"FIELD_INTEGER"
-	            "heal_amount"			"330" // 250
+	            "heal_amount"			"300" // 250
 	        }
 	        "06"
 	        {
@@ -175,11 +168,6 @@
 	
 	    "AbilitySpecial"
 	    {
-	        "05"
-	        {
-	            "var_type"				"FIELD_FLOAT"
-	            "aura_health_regen"		"4" // 3.5
-	        }
 	        "06"
 	        {
 	            "var_type"				"FIELD_INTEGER"
@@ -188,7 +176,7 @@
 	        "11"
 	        {
 	            "var_type"				"FIELD_INTEGER"
-	            "replenish_health"		"330" // 250
+	            "replenish_health"		"300" // 250
 	        }
 	    }
 	}

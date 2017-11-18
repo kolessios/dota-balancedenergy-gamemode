@@ -2,11 +2,10 @@
 {
 	"npc_dota_hero_antimage"
 	{
-	    "ArmorPhysical"		            "-2.5" // -1
+	    "ArmorPhysical"		            "-1.5" // -1
 	
 	    "AttributeBaseStrength"		    "23" // 22
-	    "AttributeBaseIntelligence"     "11" // 12
-	    "AttributeAgilityGain"          "2.3" // 2.8
+	    "AttributeAgilityGain"          "2.5" // 2.8
 	    "AttributeBaseAgility"		    "23" // 22
 	
 	    "MovementSpeed"                 "290" // 310

@@ -33,15 +33,10 @@
 	
 	    "AbilitySpecial"
 	    {
-	        "02"
-	        {
-	            "var_type"				"FIELD_FLOAT"
-	            "xp_multiplier"			"2.0"
-	        }
 	        "03"
 	        {
 	            "var_type"				"FIELD_INTEGER"
-	            "bonus_gold"			"160"
+	            "bonus_gold"			"180"
 	        }
 	        "04"
 	        {

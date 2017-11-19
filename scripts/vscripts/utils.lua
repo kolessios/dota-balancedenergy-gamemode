@@ -96,6 +96,34 @@ function CDOTA_BaseNPC_Hero:GetFountainPosition()
 	return vOrigin
 end
 
+--
+function CDOTA_BaseNPC:Rotate(vOrientation)
+	local vNew = (self:GetForwardVector() - vOrientation):Normalized()
+
+	print('Now:')
+	print(self:GetAngles())
+
+	vNew = RotatePosition(Vector(0,0,0), QAngle(vOrientation.x, vOrientation.y, vOrientation.z), self:GetAbsOrigin())
+	self:SetOrigin(vNew)
+	
+	print('New:')
+	print(self:GetAngles())
+end
+
+--
+function CalcDistance(vPos1, vPos2)
+	local vNew = vPos1 - vPos2
+	return (vNew):Length2D()
+end
+
+--
+function RotateVector2D(v,theta)
+    local xp = v.x * math.cos(theta) - v.y * math.sin(theta)
+    local yp = v.x * math.sin(theta) + v.y * math.cos(theta)
+    return Vector(xp,yp,v.z):Normalized()
+end
+
+
 -- 
 function FindLuckyCoinsInRadius(teamNumber, victim, radius)
 	local result = {}

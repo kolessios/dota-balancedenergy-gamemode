@@ -13,7 +13,7 @@
     "AbilityChannelTime"    "6.0"
     "AbilityCooldown"       "3.0"
     "AbilityManaCost"       "0"
-    "AbilityCastRange"      "600.0"
+    "AbilityCastRange"      "900.0"
     "AbilityCastPoint"      "0.0"
 
     "ItemCost"                  "140"
@@ -74,7 +74,7 @@
         "07"
         {
             "var_type"      "FIELD_FLOAT"
-            "tooltip_range"    "600.0"
+            "tooltip_range"    "900.0"
         }
     }
 

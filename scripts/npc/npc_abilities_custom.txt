@@ -196,14 +196,20 @@
 	    {
 	        "01"
 	        {
-	            "var_type"                  "FIELD_FLOAT"
-	            "mana_regen_allies"         "0.5"
+	            "var_type"         "FIELD_FLOAT"
+	            "mana_regen"       "1.0"
 	        }
 	
 	        "02"
 	        {
-	            "var_type"                  "FIELD_FLOAT"
-	            "mana_regen_enemies"        "-0.5"
+	            "var_type"         "FIELD_FLOAT"
+	            "mana_burn"        "1.0"
+	        }
+	
+	        "03"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "mana_burn_interval"    "1.0"
 	        }
 	    }
 	}

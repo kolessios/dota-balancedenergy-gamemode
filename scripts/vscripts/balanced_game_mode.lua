@@ -1,5 +1,6 @@
 local LuckyCoinSystem = nil
 local AntimageSystem = nil
+local RoshanSystem = nil
 
 -- 
 if CBalancedGameMode == nil then
@@ -9,12 +10,28 @@ end
 -- Modifiers
 LinkLuaModifier('modifier_global_boost', 'modifiers/modifier_global_boost', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_courier_speed', 'modifiers/modifier_courier_speed', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_roshan_bonus', 'modifiers/modifier_roshan_bonus', LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_roshan_bonus_burn', 'modifiers/modifier_roshan_bonus_burn', LUA_MODIFIER_MOTION_NONE)
+
+--
+function CBalancedGameMode:CreateSystems()
+	if ( not LuckyCoinSystem ) then
+		LuckyCoinSystem = CLuckyCoinSystem()
+	end 
+
+	if ( not AntimageSystem ) then
+		AntimageSystem = CAntimageSystem()
+	end 
+
+	if ( not RoshanSystem ) then
+		RoshanSystem = CRoshanSystem()
+	end 
+end
 
 -- Initialize the Game Mode
 function CBalancedGameMode:InitGameMode()
     -- System's
-	LuckyCoinSystem = CLuckyCoinSystem()
-	AntimageSystem = CAntimageSystem()
+	self:CreateSystems()
 	
 	-- Game Rules
 	GameRules:SetGoldTickTime(0.3)
@@ -28,8 +45,9 @@ function CBalancedGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetBotThinkingEnabled(true)
     
 	-- Events
-	ListenToGameEvent("game_rules_state_change", Dynamic_Wrap( CBalancedGameMode, "OnGameRulesStateChange" ), self)
-	ListenToGameEvent("last_hit", Dynamic_Wrap( CLuckyCoinSystem, "OnLastHit" ), LuckyCoinSystem)
+	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap( CBalancedGameMode, 'OnGameRulesStateChange' ), self)
+	ListenToGameEvent('last_hit', Dynamic_Wrap( CLuckyCoinSystem, 'OnLastHit' ), LuckyCoinSystem)
+	ListenToGameEvent('entity_killed', Dynamic_Wrap( CRoshanSystem, 'OnEntityKilled' ), RoshanSystem)
 
 	--ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap( CAntimageSystem, 'OnPlayerUsedAbility' ), AntimageSystem)
 	ListenToGameEvent('dota_player_learned_ability', Dynamic_Wrap( CAntimageSystem, 'OnPlayerLearnedAbility' ), AntimageSystem)
@@ -42,30 +60,46 @@ end
 function CBalancedGameMode:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
 
-	print(nNewState)
+	if ( nNewState == DOTA_GAMERULES_STATE_PRE_GAME ) then
 
-	if nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		self:ApplyBotDifficulty()
+	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		self:ApplyBoost()
+		self:ApplyBotDifficulty()
 	end
 end
 
 -- Evaluate the state of the game
 function CBalancedGameMode:OnThink()
-	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		return self:OnThinkGameProgress()
-	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
+	local nState = GameRules:State_Get()
+	local flTime = GameRules:GetDOTATime(false, false)
+
+	-- This prevents us from having to restart the entire game mode to try new changes
+	self:CreateSystems()
+
+	if ( nState == DOTA_GAMERULES_STATE_PRE_GAME ) then
+		RoshanSystem:Init()
+	end
+
+	if ( nState == DOTA_GAMERULES_STATE_PRE_GAME or nState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS ) then
+		self:CheckHeroes()
+		self:ApplyTrueSight()
+		self:ApplyCourierBoost()
+		RoshanSystem:Think()
+		
+		-- Late game!
+		if ( flTime >= (60 * 20) ) then
+			GameRules:GetGameModeEntity():SetBotsInLateGame(true)
+			GameRules:GetGameModeEntity():SetBotsAlwaysPushWithHuman(true)
+		else
+			GameRules:GetGameModeEntity():SetBotsInLateGame(false)
+			GameRules:GetGameModeEntity():SetBotsAlwaysPushWithHuman(false)
+		end
+		
+		return 1
+	elseif nState == DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
 
-	return 1
-end
-
--- 
-function CBalancedGameMode:OnThinkGameProgress()
-	self:CheckHeroes()
-	self:ApplyCourierBoost()
-	self:ApplyTrueSight()
 	return 1
 end
 
@@ -113,7 +147,7 @@ function CBalancedGameMode:ApplyCourierBoost()
 	end
 end
 
--- Provide observers with true sight
+-- Provide observer wards with true sight
 function CBalancedGameMode:ApplyTrueSight()
 	local hWard = Entities:FindByClassname(nil, 'npc_dota_ward_base')
 	

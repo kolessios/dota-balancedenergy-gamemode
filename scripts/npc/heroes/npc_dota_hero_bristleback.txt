@@ -1,8 +1,0 @@
-"npc_dota_hero_bristleback"
-{
-    "AttributeBaseStrength"		"26" // 22
-    "MovementTurnRate"		    "0.7" // 1.0
-    "ArmorPhysical"             "2.0" // 1.0
-
-    "Ability14"		            "special_bonus_hp_regen_12"
-}

@@ -73,7 +73,7 @@ function modifier_roshan_bonus:OnCreated(tData)
         local hParent = self:GetParent()
 
         -- Create the effect
-        hParent:SetRenderColor(255, 205, 205)
+        hParent:SetRenderColor(255, 225, 225)
     end
 end
 

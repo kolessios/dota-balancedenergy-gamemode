@@ -46,5 +46,5 @@ end
 
 --
 function modifier_global_boost:GetModifierPercentageRespawnTime()
-    return 0.2
+    return 0.4
 end

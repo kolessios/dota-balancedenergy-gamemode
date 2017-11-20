@@ -87,7 +87,7 @@ function CBalancedGameMode:OnThink()
 		RoshanSystem:Think()
 		
 		-- Late game!
-		if ( flTime >= (60 * 20) ) then
+		if ( flTime >= (60 * 15) ) then
 			GameRules:GetGameModeEntity():SetBotsInLateGame(true)
 			GameRules:GetGameModeEntity():SetBotsAlwaysPushWithHuman(true)
 		else

@@ -41,10 +41,10 @@ end
 -- Returns the amount of exp boost that will be provided
 -- 100 = Normal XP
 function modifier_global_boost:GetModifierPercentageExpRateBoost()
-    return 105
+    return 110
 end
 
 --
 function modifier_global_boost:GetModifierPercentageRespawnTime()
-    return 0.4
+    return 0.3
 end

@@ -54,6 +54,11 @@ end
 
 -- Called when roshan die
 function CRoshanSystem:OnEntityKilled(tData)
+    -- This rarely happens...
+    if ( not tData.entindex_attacker or not tData.entindex_killed ) then
+        return
+    end
+
     local hRoshan = self:GetRoshan()
     local hKiller = EntIndexToHScript(tData.entindex_attacker)
 

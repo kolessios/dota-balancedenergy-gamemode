@@ -24,14 +24,6 @@
 	    "Ability16"		"special_bonus_unique_antimage_4"
 	    "Ability17"		"special_bonus_unique_antimage_2"
 	}
-	"npc_dota_hero_bristleback"
-	{
-	    "AttributeBaseStrength"		"26" // 22
-	    "MovementTurnRate"		    "0.7" // 1.0
-	    "ArmorPhysical"             "2.0" // 1.0
-	
-	    "Ability14"		            "special_bonus_hp_regen_12"
-	}
 	"npc_dota_hero_shredder"
 	{
 	    "ArmorPhysical"		        "-0.5" // -2
@@ -40,16 +32,5 @@
 	    "AttributeBaseStrength"     "24" // 21
 	    "MovementSpeed"		        "280" // 290
 	    "MovementTurnRate"		    "0.5" // 0.6
-	}
-	"npc_dota_hero_techies"
-	{
-	    //"AttackDamageMin"		"16" // 7
-		//"AttackDamageMax"		"21" // 9
-	    //"AttackRange"           "600" // 700
-	    //"ProjectileSpeed"		"1000" // 900
-	
-	    //"AttributeBaseStrength"         "16" // 17
-	    //"AttributeBaseIntelligence"     "26" // 22
-	    //"AttributeBaseAgility"          "13" // 14
 	}
 }

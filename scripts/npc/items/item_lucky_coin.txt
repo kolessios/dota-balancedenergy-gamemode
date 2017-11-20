@@ -16,6 +16,10 @@
     "AbilityCastRange"      "900.0"
     "AbilityCastPoint"      "0.0"
 
+    // sigh...
+    "ItemPurchasable"       "0"
+    "IsObsolete"            "1"
+
     "ItemCost"                  "140"
     "ItemShopTags"              ""
     "ItemQuality"               "rare"

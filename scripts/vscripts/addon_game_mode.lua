@@ -9,6 +9,7 @@ require('./systems/lucky_coin_system')
 require('./systems/ward_refill_system')
 require('./systems/antimage_system')
 require('./systems/roshan_system')
+require('./systems/bot_system')
 
 --
 function Precache( context )

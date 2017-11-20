@@ -1,6 +1,7 @@
 local LuckyCoinSystem = nil
 local AntimageSystem = nil
 local RoshanSystem = nil
+local BotSystem = nil
 
 -- 
 if CBalancedGameMode == nil then
@@ -26,6 +27,10 @@ function CBalancedGameMode:CreateSystems()
 	if ( not RoshanSystem ) then
 		RoshanSystem = CRoshanSystem()
 	end 
+
+	if ( not BotSystem ) then
+		BotSystem = CBotSystem()
+	end
 end
 
 -- Initialize the Game Mode
@@ -34,12 +39,11 @@ function CBalancedGameMode:InitGameMode()
 	self:CreateSystems()
 	
 	-- Game Rules
-	GameRules:SetGoldTickTime(0.3)
+	GameRules:SetGoldTickTime(0.2)
 	GameRules:SetCustomGameSetupAutoLaunchDelay(20)
 	GameRules:SetHeroSelectionTime(30)
 	GameRules:SetStrategyTime(15)
 	GameRules:SetPreGameTime(50)
-	
 	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen(8.0)
 	--GameRules:GetGameModeEntity():SetFountainPercentageManaRegen(6.0)
 	GameRules:GetGameModeEntity():SetBotThinkingEnabled(true)
@@ -60,21 +64,25 @@ end
 function CBalancedGameMode:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
 
-	if ( nNewState == DOTA_GAMERULES_STATE_PRE_GAME ) then
-
+	if ( nNewState == DOTA_GAMERULES_STATE_HERO_SELECTION ) then
+		BotSystem:Init()
+	elseif ( nNewState == DOTA_GAMERULES_STATE_STRATEGY_TIME ) then
+		BotSystem:CheckPlayers()
+	elseif ( nNewState == DOTA_GAMERULES_STATE_PRE_GAME ) then
+		BotSystem:SetDifficulty()
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		self:ApplyBoost()
-		self:ApplyBotDifficulty()
+		BotSystem:ApplyBoost()
 	end
 end
 
 -- Evaluate the state of the game
 function CBalancedGameMode:OnThink()
 	local nState = GameRules:State_Get()
-	local flTime = GameRules:GetDOTATime(false, false)
 
-	-- This prevents us from having to restart the entire game mode to try new changes
-	self:CreateSystems()
+	if IsInToolsMode() then
+		-- This prevents us from having to restart the entire game mode to try new changes
+		self:CreateSystems()
+	end
 
 	if ( nState == DOTA_GAMERULES_STATE_PRE_GAME ) then
 		RoshanSystem:Init()
@@ -84,17 +92,10 @@ function CBalancedGameMode:OnThink()
 		self:CheckHeroes()
 		self:ApplyTrueSight()
 		self:ApplyCourierBoost()
+
 		RoshanSystem:Think()
-		
-		-- Late game!
-		if ( flTime >= (60 * 15) ) then
-			GameRules:GetGameModeEntity():SetBotsInLateGame(true)
-			GameRules:GetGameModeEntity():SetBotsAlwaysPushWithHuman(true)
-		else
-			GameRules:GetGameModeEntity():SetBotsInLateGame(false)
-			GameRules:GetGameModeEntity():SetBotsAlwaysPushWithHuman(false)
-		end
-		
+		BotSystem:Think()
+
 		return 1
 	elseif nState == DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
@@ -115,32 +116,14 @@ function CBalancedGameMode:CheckHeroes()
 	end
 end
 
--- Applies a modifier to the heroes to offer base benefits
-function CBalancedGameMode:ApplyBoost()
-	for _,hHero in pairs(HeroList:GetAllHeroes()) do
-		if ( hHero:IsRealHero() ) then
-			hHero:AddNewModifier(hHero, nil, 'modifier_global_boost', nil)
-		end
-	end
-end
-
--- Applies the Bot difficulty for all bots
-function CBalancedGameMode:ApplyBotDifficulty()
-	for _,hHero in pairs(HeroList:GetAllHeroes()) do
-		if ( hHero:IsRealHero() and PlayerResource:GetConnectionState(hHero:GetPlayerOwnerID()) == 1 ) then
-			hHero:SetBotDifficulty(3) -- Hard
-		end
-	end
-end
-
 -- Applies a modifier to the couriers to increase their movement speed
 function CBalancedGameMode:ApplyCourierBoost()
 	local hCourier = Entities:FindByClassname(nil, 'npc_dota_courier')
 
 	while hCourier do
 		if ( not hCourier:HasModifier('modifier_courier_speed') ) then
-			print('modifier_courier_speed')
 			hCourier:AddNewModifier(hCourier, nil, 'modifier_courier_speed', nil)
+			print('Adding speed boost to courier!')
 		end
 
 		hCourier = Entities:FindByClassname(hCourier, 'npc_dota_courier')
